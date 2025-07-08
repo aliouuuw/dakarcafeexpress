@@ -83,7 +83,9 @@ module.exports = {
           "var(--www-lorespresso-com-semantic-link-font-family)",
         "www-lorespresso-com-semantic-link-underline":
           "var(--www-lorespresso-com-semantic-link-underline-font-family)",
+        poppins: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
         sans: [
+          "Poppins",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
