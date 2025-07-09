@@ -53,7 +53,7 @@ export const TestimonialsSection: React.FC = () => {
 
   return (
     <section
-      className="py-24 bg-white relative z-[1] overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white relative z-[1] overflow-hidden"
       style={{ zIndex: 1 }}
     >
       {/* Background Pattern */}
@@ -68,37 +68,37 @@ export const TestimonialsSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center space-y-6 mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-[#B16631]/10 text-[#B16631] text-sm font-medium rounded-full mb-4">
-            <StarIcon className="w-4 h-4 mr-2 fill-current" />
+        <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16">
+          <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-[#B16631]/10 text-[#B16631] text-xs sm:text-sm font-medium rounded-full mb-3 sm:mb-4">
+            <StarIcon className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 fill-current" />
             Plus de 1000 clients satisfaits
           </div>
-          <h2 className="text-4xl md:text-5xl font-light text-[#150A05] leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[#150A05] leading-tight">
             Ce que disent nos clients
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
             Découvrez les expériences de nos clients fidèles à travers Dakar
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white border border-gray-100 rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#B16631] to-[#8F4F26] rounded-full flex items-center justify-center text-white font-bold">
+              <div className="flex items-start justify-between mb-3 sm:mb-4">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#B16631] to-[#8F4F26] rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base">
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#150A05]">
+                    <h3 className="font-semibold text-[#150A05] text-sm sm:text-base">
                       {testimonial.name}
                     </h3>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-xs sm:text-sm text-gray-500">
                       {testimonial.location}
                     </p>
                   </div>
@@ -106,7 +106,7 @@ export const TestimonialsSection: React.FC = () => {
                 {testimonial.verified && (
                   <div className="flex items-center text-green-600 text-xs">
                     <svg
-                      className="w-4 h-4 mr-1"
+                      className="w-3 h-3 sm:w-4 sm:h-4 mr-0.5 sm:mr-1"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -122,12 +122,12 @@ export const TestimonialsSection: React.FC = () => {
               </div>
 
               {/* Rating */}
-              <div className="flex items-center space-x-2 mb-3">
+              <div className="flex items-center space-x-1.5 sm:space-x-2 mb-2 sm:mb-3">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <div key={i} className="relative">
                       <CoffeeCupIcon
-                        className={`w-4 h-4 ${
+                        className={`w-3 h-3 sm:w-4 sm:h-4 ${
                           i < testimonial.rating
                             ? "text-[#B16631] fill-current"
                             : "text-gray-300"
@@ -136,20 +136,20 @@ export const TestimonialsSection: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                <span className="text-sm text-gray-500">
+                <span className="text-xs sm:text-sm text-gray-500">
                   {testimonial.date}
                 </span>
               </div>
 
               {/* Review */}
-              <blockquote className="text-gray-700 mb-4 leading-relaxed">
+              <blockquote className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed">
                 "{testimonial.review}"
               </blockquote>
 
               {/* Product */}
-              <div className="pt-4 border-t border-gray-100">
+              <div className="pt-3 sm:pt-4 border-t border-gray-100">
                 <div className="flex items-center justify-between">
-                  <div className="text-sm">
+                  <div className="text-xs sm:text-sm">
                     <span className="text-gray-500">A commandé:</span>
                     <span className="font-medium text-[#150A05] ml-1">
                       {testimonial.product}
@@ -162,8 +162,8 @@ export const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* View More Button */}
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
+        <div className="text-center mt-8 sm:mt-12">
+          <Button variant="outline" size="lg" className="text-sm sm:text-base">
             Voir plus d'avis clients
           </Button>
         </div>
