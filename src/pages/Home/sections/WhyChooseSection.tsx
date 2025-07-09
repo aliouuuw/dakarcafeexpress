@@ -190,12 +190,9 @@ export const WhyChooseSection: React.FC = () => {
               whileHover={{ scale: 1.05 }}
             >
               <div className="flex items-center space-x-2 sm:space-x-3">
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
+                <div>
                   <TruckIcon className="w-8 h-8 sm:w-10 sm:h-10" />
-                </motion.div>
+                </div>
                 <div>
                   <div className="font-bold text-base sm:text-lg">
                     Livraison gratuite

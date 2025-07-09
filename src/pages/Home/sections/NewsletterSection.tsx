@@ -329,7 +329,7 @@ export const NewsletterSection: React.FC = () => {
               </motion.div>
 
               {/* Discount Preview */}
-              <motion.div
+              {/* <motion.div
                 className="bg-[#B16631]/20 rounded-lg p-3 sm:p-4 text-center"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -356,8 +356,8 @@ export const NewsletterSection: React.FC = () => {
                 >
                   BIENVENUE10
                 </motion.div>
+                </motion.div> */}
               </motion.div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
