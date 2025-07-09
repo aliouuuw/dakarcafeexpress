@@ -94,47 +94,47 @@ export const FeaturedProductsSection: React.FC = () => {
   return (
     <section
       id="produits"
-      className="py-24 bg-white relative z-[1]"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white relative z-[1]"
       style={{ zIndex: 1 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-6 mb-20">
-          <h2 className="text-4xl md:text-5xl font-light text-[#150A05] leading-tight">
+        <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 md:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[#150A05] leading-tight">
             Nos Produits les Plus Vendus
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             Découvrez notre sélection de capsules et machines compatibles
             Nespresso avec livraison rapide à Dakar
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {productData.map((product) => (
             <Card
               key={product.id}
-              className="group overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="group overflow-hidden hover:shadow-xl transition-shadow duration-300 mx-auto w-full max-w-sm sm:max-w-none"
             >
               {/* Product Image */}
               <div className="relative aspect-square bg-gray-100 overflow-hidden">
                 {/* Placeholder image */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#150A05] to-[#2A1410] flex items-center justify-center">
-                  <CoffeeCupIcon className="w-16 h-16 opacity-20 text-white" />
+                  <CoffeeCupIcon className="w-12 h-12 sm:w-16 sm:h-16 opacity-20 text-white" />
                 </div>
 
                 {/* Badges */}
-                <div className="absolute top-2 left-2 flex flex-col gap-2">
+                <div className="absolute top-2 left-2 flex flex-col gap-1 sm:gap-2">
                   {product.isNew && (
-                    <span className="bg-green-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                    <span className="bg-green-600 text-white text-xs px-2 py-0.5 sm:py-1 rounded-full font-semibold">
                       Nouveau
                     </span>
                   )}
                   {product.isBestSeller && (
-                    <span className="bg-[#B16631] text-white text-xs px-2 py-1 rounded-full font-semibold">
+                    <span className="bg-[#B16631] text-white text-xs px-2 py-0.5 sm:py-1 rounded-full font-semibold">
                       Best Seller
                     </span>
                   )}
                   {product.originalPrice && (
-                    <span className="bg-red-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                    <span className="bg-red-600 text-white text-xs px-2 py-0.5 sm:py-1 rounded-full font-semibold">
                       -
                       {getDiscountPercentage(
                         product.price,
@@ -144,38 +144,43 @@ export const FeaturedProductsSection: React.FC = () => {
                     </span>
                   )}
                   {!product.inStock && (
-                    <span className="bg-gray-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                    <span className="bg-gray-600 text-white text-xs px-2 py-0.5 sm:py-1 rounded-full font-semibold">
                       Rupture
                     </span>
                   )}
                 </div>
 
                 {/* Wishlist Button */}
-                <button className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow opacity-0 group-hover:opacity-100">
-                  <HeartIcon className="w-5 h-5 text-gray-600 hover:text-red-500 transition-colors" />
+                <button className="absolute top-2 right-2 p-1.5 sm:p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow opacity-0 group-hover:opacity-100">
+                  <HeartIcon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 hover:text-red-500 transition-colors" />
                 </button>
 
                 {/* Quick Add Button */}
                 <div className="absolute inset-x-0 bottom-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <Button
-                    className="w-full rounded-none bg-[#B16631] hover:bg-[#8B4F26] text-white py-3"
+                    className="w-full rounded-none bg-[#B16631] hover:bg-[#8B4F26] text-white py-2 sm:py-3 text-sm sm:text-base"
                     disabled={!product.inStock}
                   >
-                    <ShoppingCartIcon className="w-5 h-5 mr-2" />
-                    {product.inStock ? "Ajouter au panier" : "Indisponible"}
+                    <ShoppingCartIcon className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">
+                      {product.inStock ? "Ajouter au panier" : "Indisponible"}
+                    </span>
+                    <span className="sm:hidden">
+                      {product.inStock ? "Ajouter" : "Indisponible"}
+                    </span>
                   </Button>
                 </div>
               </div>
 
               {/* Product Info */}
-              <div className="p-4">
+              <div className="p-3 sm:p-4">
                 {/* Category */}
                 <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">
                   {product.category}
                 </p>
 
                 {/* Product Name */}
-                <h3 className="font-semibold text-[#150A05] mb-2 line-clamp-1 group-hover:text-[#B16631] transition-colors">
+                <h3 className="font-semibold text-sm sm:text-base text-[#150A05] mb-2 line-clamp-1 group-hover:text-[#B16631] transition-colors">
                   <Link to={`/product/${product.id}`}>{product.name}</Link>
                 </h3>
 
@@ -185,17 +190,17 @@ export const FeaturedProductsSection: React.FC = () => {
                 </p>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                <p className="text-xs sm:text-sm text-gray-600 mb-3 line-clamp-2">
                   {product.description}
                 </p>
 
                 {/* Rating */}
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-2 sm:mb-3">
                   <div className="flex items-center">
                     {[...Array(5)].map((_, i) => (
                       <StarIcon
                         key={i}
-                        className={`w-4 h-4 ${
+                        className={`w-3 h-3 sm:w-4 sm:h-4 ${
                           i < Math.floor(product.rating)
                             ? "text-yellow-400"
                             : "text-gray-300"
@@ -203,26 +208,26 @@ export const FeaturedProductsSection: React.FC = () => {
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-600 ml-2">
+                  <span className="text-xs sm:text-sm text-gray-600 ml-2">
                     {product.rating} ({product.reviewCount})
                   </span>
                 </div>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-2 mb-3">
-                  <span className="text-xl font-bold text-[#150A05]">
+                <div className="flex items-baseline gap-2 mb-2 sm:mb-3">
+                  <span className="text-lg sm:text-xl font-bold text-[#150A05]">
                     {formatFCFA(product.price)}
                   </span>
                   {product.originalPrice && (
-                    <span className="text-sm text-gray-500 line-through">
+                    <span className="text-xs sm:text-sm text-gray-500 line-through">
                       {formatFCFA(product.originalPrice)}
                     </span>
                   )}
                 </div>
 
                 {/* Intensity */}
-                <div className="pt-3 border-t border-gray-100">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="pt-2 sm:pt-3 border-t border-gray-100">
+                  <div className="flex items-center justify-between mb-1 sm:mb-2">
                     <span className="text-xs text-gray-500 uppercase tracking-wider font-medium">
                       Intensité
                     </span>
@@ -231,7 +236,7 @@ export const FeaturedProductsSection: React.FC = () => {
                     </span>
                   </div>
                   <div className="relative">
-                    <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div className="w-full h-1.5 sm:h-2 bg-gray-200 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-gradient-to-r from-[#B16631] to-[#8B4F26] transition-all duration-500 ease-out"
                         style={{ width: `${(product.intensity / 10) * 100}%` }}
@@ -242,7 +247,7 @@ export const FeaturedProductsSection: React.FC = () => {
                         {[...Array(5)].map((_, i) => (
                           <div
                             key={i}
-                            className={`w-1 h-1 rounded-full transition-all duration-300 ${
+                            className={`w-0.5 h-0.5 sm:w-1 sm:h-1 rounded-full transition-all duration-300 ${
                               i < Math.ceil(product.intensity / 2)
                                 ? "bg-white shadow-sm"
                                 : "bg-transparent"

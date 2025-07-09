@@ -19,13 +19,6 @@ export const NotreCafe: React.FC = () => {
 
       {/* Hero Section */}
       <section className="pb-16 bg-gradient-to-br from-[#150A05] to-[#2a1810] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <img
-            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-            alt="Coffee beans background"
-            className="w-full h-full object-cover"
-          />
-        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pt-16">
           <div className="text-center space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
