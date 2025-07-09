@@ -7,6 +7,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // West African Color Palette
+        dakarcafe: {
+          primary: "#150A05", // Dark brown - rich coffee beans and earth
+          "primary-light": "#2A1410",
+          accent: "#B16631", // Light bronze/caramel - roasted coffee and warmth
+          "accent-dark": "#8B4F26",
+          "accent-light": "#D4875A",
+        },
+        // Legacy colors (keeping for backward compatibility)
         wwwlorespressocomalto: "var(--wwwlorespressocomalto)",
         "wwwlorespressocombay-of-many": "var(--wwwlorespressocombay-of-many)",
         wwwlorespressocomblack: "var(--wwwlorespressocomblack)",
